@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=360, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cdn_modules/font-awesome@6.6.0/css/all.min.css" />
+  <title>Acoordion - codeWithAk</title>
+</head>
+
+<body>
+
+  <div class="accordion">
+    <input class="check-btn" id="btn" type="checkbox" name="accordion" checked>
+    <header class="accordion-header">
+      <label for="btn" class="accordion-btn">
+        <span>Accordion Title</span>
+        <p>
+          <i class="fa-solid fa-chevron-down"></i>
+        </p>
+      </label>
+    </header>
+    <div class="accordion-body">
+      <p class="accordion-content">
+        Lorem ipsum is a placeholder text used in publishing and graphic design to show the visual style of a document, typeface, or webpage. It's not meant to be read as meaningful sentences, but rather to serve as a sample.
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <input class="check-btn" type="checkbox" name="accordion" id="btn1">
+    <header class="accordion-header">
+      <label for="btn1" class="accordion-btn">
+        <span>Accordion Title</span>
+        <p>
+          <i class="fa-solid fa-chevron-down"></i>
+        </p>
+      </label>
+    </header>
+    <div class="accordion-body">
+      <p class="accordion-content">
+        This is an accordion content. It is inside accordion body and all the content of the accordion will go here.
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <input class="check-btn" type="checkbox" name="accordion" id="btn2">
+    <header class="accordion-header">
+      <label for="btn2" class="accordion-btn">
+        <span>Accordion Title</span>
+        <p>
+          <i class="fa-solid fa-chevron-down"></i>
+        </p>
+      </label>
+    </header>
+    <div class="accordion-body">
+      <p class="accordion-content">
+        This is an accordion content. It is inside accordion body and all the content of the accordion will go here.
+      </p>
+    </div>
+  </div>
+
+
+
+
+  <div class="carousel-container d-flex">
+    <div class="image-gallery">
+      <div class="image-container">
+        
+      </div>
+      <div class="image-container">
+        <img src="/23_792970021.png" alt="" />
+      </div>
+      <div class="image-container">
+        <img src="/IMG-20240916-WA0008.jpg" alt="/IMG-20240916-WA0008.jpg">
+      </div>
+      <div class="image-container"></div>
+    </div>
+    <div class="indicator-container">
+      <span class="indicators active"></span>
+      <span class="indicators"></span>
+      <span class="indicators"></span>
+      <span class="indicators"></span>
+    </div>
+  </div>
+
+
+<div class="shopping-badge-container d-flex">
+    <div class="badge">
+      <i class="fa-lg fa-solid fa-cart-shopping"></i>
+      <span class="item-count d-flex">0</span>
+    </div>
+    <div class="badge-btn">
+      <button onclick="handleClick(1)" type="button">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <button onclick="handleClick(-1)" type="button">
+        <i class=" fa-solid fa-minus"></i>
+      </button>
+    </div>
+</div>
+
+  <script type="text/javascript" src="cdn_modules/font-awesome@6.6.0/js/all.js"></script>
+
+  <script>
+    const imgContainers = document.querySelectorAll(".image-container");
+    const gallery = document.querySelector(".image-gallery");
+    const maxWidth = gallery.getBoundingClientRect().width;
+    const indicators = document.querySelectorAll(".indicators")
+
+
+
+    gallery.onscrollend = (e) => {
+      imgContainers.forEach((container, index) => {
+        const rect = container.getBoundingClientRect();
+        const conX = rect.x;
+        const conWidth = rect.width;
+        const factor = conWidth - conX
+        indicators[index].classList.remove("active")
+        if (factor > 0 && factor <= maxWidth)
+        {
+          indicators[index].classList.add("active")
+        }
+      })
+    }
+    
+    function handleClick(num)
+    {
+      const badge = document.querySelector(".item-count");
+      let currentItemNum = (badge.textContent .includes("+")) ? 100 : Number(badge.textContent);
+      let setNum = currentItemNum + num;
+      if(setNum > 0)
+      {
+        badge.style.transform = "scale(1)";
+        badge.textContent = setNum < 100 ? setNum : 99 + "+";
+      }
+      else if(setNum == 0)
+      {
+        badge.style.transform = "scale(0)";
+        setTimeout(()=>{
+          badge.textContent = 0;
+        },150)
+      }
+      else
+      {
+        badge.style.transform = "scale(0)";
+      }
+      
+    }
+    
+    handleClick(0);
+    
+  </script>
+</body>
+
+</html>
