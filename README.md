@@ -1,10 +1,7 @@
-
 <h1>About Repo</h1>
-This is basically a repo dedicated to show
-my basic skill of web development.
+<p>This repository showcases my fundamental skills in web development.</p>
 
 <p>
-  <b>Author : </b>
-  <b style="color:blue;"> codeWithAk0021 </b>b
+  <b>Author: </b>
+  <span style="color: blue;">codeWithAk0021</span>
 </p>
-
