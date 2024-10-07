@@ -211,3 +211,7 @@ input {
 {
   background: hsla(205, 82%, 57%, .3);
 }
+.dark{
+  background: hsla(235, 0%, 0%, 1);
+  border-radius:0.3rem;
+}
