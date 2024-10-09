@@ -12,97 +12,134 @@
 
 <body>
 
-  <div class="accordion">
-    <input class="check-btn" id="btn" type="checkbox" name="accordion" checked>
-    <header class="accordion-header">
-      <label for="btn" class="accordion-btn">
-        <span>Accordion Title</span>
-        <p>
-          <i class="fa-solid fa-chevron-down"></i>
+<input type="checkbox" id="nav-btn" >
+  <div class="nav-container">
+    <ul class="vertical-nav">
+      <li>
+        <a href="#">
+        <i class="fa-solid fa-home"></i>
+        Home
+        </a>
+      </li>
+      <li><a href="#">
+        <i class="fas fa-project-diagram"></i>
+        Project</a></li>
+      <li><a href="#">
+        <i class="fa-solid fa-info-circle"></i>About</a></li>
+      <li><a href="#">
+        <i class="fas fa-question-circle"></i>Help</a></li>
+    </ul>
+  </div>
+  <nav class="d-flex nav">
+    
+    <label class="nav-btn" for="nav-btn">
+      <i class="fa-solid fa-bars fa-1x"></i>
+    </label>
+    <div class="website-metadata">
+      <div class="logo"></div>
+      <p class="heading">Illustration</p>
+    </div>
+    <div class="mode-toggle">
+      <img src="light_mode.png" width="25px">
+    </div>
+  </nav>
+  
+
+
+
+  <div class="main-content">
+    <div class="accordion">
+      <input class="check-btn" id="btn" type="checkbox" name="accordion" checked>
+      <header class="accordion-header">
+        <label for="btn" class="accordion-btn">
+          <span>Accordion Title</span>
+          <p>
+            <i class="fa-solid fa-chevron-down"></i>
+          </p>
+        </label>
+      </header>
+      <div class="accordion-body">
+        <p class="accordion-content">
+          Lorem ipsum is a placeholder text used in publishing and graphic design to show the visual style of a document, typeface, or webpage. It's not meant to be read as meaningful sentences, but rather to serve as a sample.
         </p>
-      </label>
-    </header>
-    <div class="accordion-body">
-      <p class="accordion-content">
-        Lorem ipsum is a placeholder text used in publishing and graphic design to show the visual style of a document, typeface, or webpage. It's not meant to be read as meaningful sentences, but rather to serve as a sample.
-      </p>
+      </div>
     </div>
-  </div>
 
-  <div class="accordion">
-    <input class="check-btn" type="checkbox" name="accordion" id="btn1">
-    <header class="accordion-header">
-      <label for="btn1" class="accordion-btn">
-        <span>Accordion Title</span>
-        <p>
-          <i class="fa-solid fa-chevron-down"></i>
+    <div class="accordion">
+      <input class="check-btn" type="checkbox" name="accordion" id="btn1">
+      <header class="accordion-header">
+        <label for="btn1" class="accordion-btn">
+          <span>Accordion Title</span>
+          <p>
+            <i class="fa-solid fa-chevron-down"></i>
+          </p>
+        </label>
+      </header>
+      <div class="accordion-body">
+        <p class="accordion-content">
+          This is an accordion content. It is inside accordion body and all the content of the accordion will go here.
         </p>
-      </label>
-    </header>
-    <div class="accordion-body">
-      <p class="accordion-content">
-        This is an accordion content. It is inside accordion body and all the content of the accordion will go here.
-      </p>
+      </div>
     </div>
-  </div>
 
-  <div class="accordion">
-    <input class="check-btn" type="checkbox" name="accordion" id="btn2">
-    <header class="accordion-header">
-      <label for="btn2" class="accordion-btn">
-        <span>Accordion Title</span>
-        <p>
-          <i class="fa-solid fa-chevron-down"></i>
+    <div class="accordion">
+      <input class="check-btn" type="checkbox" name="accordion" id="btn2">
+      <header class="accordion-header">
+        <label for="btn2" class="accordion-btn">
+          <span>Accordion Title</span>
+          <p>
+            <i class="fa-solid fa-chevron-down"></i>
+          </p>
+        </label>
+      </header>
+      <div class="accordion-body">
+        <p class="accordion-content">
+          This is an accordion content. It is inside accordion body and all the content of the accordion will go here.
         </p>
-      </label>
-    </header>
-    <div class="accordion-body">
-      <p class="accordion-content">
-        This is an accordion content. It is inside accordion body and all the content of the accordion will go here.
-      </p>
+      </div>
+    </div>
+
+
+
+
+    <div class="carousel-container d-flex">
+      <div class="image-gallery">
+        <div class="image-container">
+          <img src="97188770.jpg" alt="">
+        </div>
+        <div class="image-container">
+          <img src="23_792970021.png" alt="" />
+        </div>
+        <div class="image-container">
+          <img src="IMG-20240916-WA0008.jpg" alt="/IMG-20240916-WA0008.jpg">
+        </div>
+        <div class="image-container"></div>
+      </div>
+      <div class="indicator-container">
+        <span class="indicators active"></span>
+        <span class="indicators"></span>
+        <span class="indicators"></span>
+        <span class="indicators"></span>
+      </div>
+    </div>
+
+    <div class="d-flex dark">
+      <div class="shopping-badge-container d-flex">
+        <div class="badge">
+          <i class="fa-lg fa-solid fa-cart-shopping"></i>
+          <span class="item-count d-flex">0</span>
+        </div>
+        <div class="badge-btn">
+          <button onclick="handleClick(1)" type="button">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <button onclick="handleClick(-1)" type="button">
+            <i class=" fa-solid fa-minus"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-
-
-
-
-  <div class="carousel-container d-flex">
-    <div class="image-gallery">
-      <div class="image-container">
-        <img src="97188770.jpg" alt="">
-      </div>
-      <div class="image-container">
-        <img src="23_792970021.png" alt="" />
-      </div>
-      <div class="image-container">
-        <img src="IMG-20240916-WA0008.jpg" alt="/IMG-20240916-WA0008.jpg">
-      </div>
-      <div class="image-container"></div>
-    </div>
-    <div class="indicator-container">
-      <span class="indicators active"></span>
-      <span class="indicators"></span>
-      <span class="indicators"></span>
-      <span class="indicators"></span>
-    </div>
-  </div>
-
-<div class="d-flex dark">
-<div class="shopping-badge-container d-flex">
-    <div class="badge">
-      <i class="fa-lg fa-solid fa-cart-shopping"></i>
-      <span class="item-count d-flex">0</span>
-    </div>
-    <div class="badge-btn">
-      <button onclick="handleClick(1)" type="button">
-        <i class="fa-solid fa-plus"></i>
-      </button>
-      <button onclick="handleClick(-1)" type="button">
-        <i class=" fa-solid fa-minus"></i>
-      </button>
-    </div>
-</div>
-</div>
   <script type="text/javascript" src="cdn_modules/font-awesome@6.6.0/js/all.js"></script>
 
   <script src="main.js"></script>

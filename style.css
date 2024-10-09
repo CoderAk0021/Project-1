@@ -1,3 +1,8 @@
+:root{
+  --bodyBackgroundColor:hsla(235, 0%, 13%, 1);
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,14 +14,16 @@
 
 body {
   width: 100%;
-  padding: 8vw;
-  background: hsla(235, 0%, 13%, 1);
+  background: var(--bodyBackgroundColor);
+ 
 }
-
+.main-content{
+  padding: 8vw;
+  width:100%;
+}
 .accordion {
   width: 100%;
   border: 1px solid hsla(235, 0%, 0%, .51);
-  ;
   border-radius: 0.3rem;
   margin-bottom: 10px;
   position: relative;
@@ -168,6 +175,7 @@ input {
   padding: 0.2rem;
   color:white;
   display: inline;
+  
 }
 .item-count
 {
@@ -215,3 +223,115 @@ input {
   background: hsla(235, 0%, 0%, 1);
   border-radius:0.3rem;
 }
+.nav
+{
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top:0;
+  left:0;
+  z-index: 1;
+  padding: 1rem 2rem;
+    background:hsla(235, 0%, 0%, .3) ;
+  backdrop-filter: blur(20px);
+  color: white;
+}
+.nav-btn{
+  font-size: 30px;
+}
+.mode-toggle img{
+  transition:0.75s ease all;
+}
+.mode-toggle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  background: red;
+  border-radius: 50%;
+  background:hsla(235, 0%, 0%, 1);
+}
+.vertical-nav{
+  height: 100%;
+  min-width: max-content;
+  max-width: 50%;
+  background: hsla(235, 0%, 0%, 1);
+  list-style: none;
+  padding: 2rem 0rem;
+  transform: translateX(-100%);
+  transition-delay: 0.8s;
+  transition: transform 0.5s ease-in-out;
+}
+.vertical-nav li{
+  
+}
+.vertical-nav li a{
+  
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color:white;
+  display: flex;
+  align-items: center;
+  gap:0.7rem;
+}
+.nav-container{
+  position: fixed;
+  width:100vw;
+  top:0;
+  left:0;
+  z-index: 2;
+  height:100vh;
+  background: hsla(235, 0%, 0%, .4);
+  transform: translateX(-100%);
+  
+}
+
+/*mode*/
+.stretch{
+  position: fixed;
+  background: black;
+  border-radius: 50%;
+  animation:stretch 0.75s ease 1;
+  height: 120vh;
+  width:120vw;
+}
+.stretchBack{
+  position: fixed;
+  background: black;
+  border-radius: 50%;
+  animation:stretchBack 0.75s ease 1;
+  height: 120vh;
+  width:120vw;
+}
+@keyframes stretch{
+  from{
+    opacity: 0;
+    transform: scale(0);
+    width:0;
+    height: 0;
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+    height: 120vh;
+    width:120vh;
+  }
+}
+
+@keyframes stretchBack{
+  from{
+    opacity: 1;
+    transform: scale(1);
+    width:120vh;
+    height: 120vh;
+  }
+  to{
+    opacity: 0;
+    transform: scale(0);
+    height: 0;
+    width:0;
+  }
+}
+
+

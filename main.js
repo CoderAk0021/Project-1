@@ -44,4 +44,86 @@ const imgContainers = document.querySelectorAll(".image-container");
     }
     
     handleClick(0);
-    
+
+
+const navBtn = document.querySelector(".nav-btn");
+const navContainer = document.querySelector(".nav-container");
+const verticalNav = document.querySelector(".vertical-nav");
+
+navContainer.addEventListener("click",(e)=>{
+   //console.log(e.target.contains(verticalNav));
+   if(e.target.contains(navContainer))
+   {
+     verticalNav.style.transform = "translateX(-100%)";
+     setTimeout(()=>{
+       navContainer.style.transform = "translateX(-100%)";
+       document.body.style.overflow = "initial"
+     },550)
+     
+   }
+})
+
+navBtn.addEventListener("click",()=>{
+  navContainer.style.transform = "translateX(0)";
+  verticalNav.style.transform = "translateX(0)";
+  document.body.style.overflow = "hidden"
+})
+
+
+/*Dark Mode Toggle */
+const modeBtn = document.querySelector(".mode-toggle");
+
+const modeToggleIcon = document.querySelector(".mode-toggle img");
+
+modeBtn.addEventListener("click",iconToggle)
+
+
+function iconToggle() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  
+  if (modeToggleIcon.getAttribute("src").includes("light"))
+  {
+    const stretch = `<div  class="stretch"></div>`;
+    modeToggleIcon.style.transform = "rotate(360deg)";
+    modeToggleIcon.style.opacity = 0;
+    modeBtn.insertAdjacentHTML("beforeend", stretch)
+
+    setTimeout(() => {
+      modeToggleIcon.src = "dark_mode.png"
+      modeToggleIcon.style.opacity = 1;
+      modeBtn.querySelector(".stretch").remove();
+
+    }, 600)
+
+  }
+  else {
+    const stretch = `<div class="stretchBack"></div>`;
+    modeToggleIcon.style.transform = "rotate(0deg)";
+    modeToggleIcon.style.opacity = 0;
+    modeBtn.insertAdjacentHTML("beforeend", stretch)
+
+    setTimeout(() => {
+      modeToggleIcon.src = "light_mode.png"
+      modeToggleIcon.style.opacity = 1;
+      modeBtn.querySelector(".stretchBack").remove();
+    }, 300)
+
+  }
+  setDark(modeToggleIcon.getAttribute("src"));
+
+}
+
+function setDark(att) {
+  let time = att.includes("light") ? 500 : 0;
+  setTimeout(() => {
+    if (att.includes("light"))
+    {
+      document.documentElement.style.setProperty("--bodyBackgroundColor", "hsla(235, 0%, 13%, 1)");
+    }
+    else {
+      document.documentElement.style.setProperty("--bodyBackgroundColor", "white");
+    }
+  }, time)
+
+}
