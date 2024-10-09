@@ -71,7 +71,11 @@ body {
   color: hsla(235, 20%, 13%, .9);
 
 }
-
+.accordion-content li
+{
+  padding: 0rem 1rem;
+  color:red;
+}
 input {
   display: none;
 }
